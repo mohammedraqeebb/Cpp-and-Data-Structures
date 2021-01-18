@@ -6,9 +6,9 @@ int main() {
 	int m,n,target;
     cin>>m>>n;
     int m1[m][n];
-    for(int i=0;i<n;i++)
+    for(int i=0;i<m;i++)
 	{
-	    for(int j=0;j<m;j++)
+	    for(int j=0;j<n;j++)
 	    {
 	        cin>>m1[i][j];
 	    }
