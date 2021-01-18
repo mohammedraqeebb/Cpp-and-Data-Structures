@@ -4,13 +4,13 @@ using namespace std;
 
 int main() {
 	int m,n,target;
-    cin>>m>>n;
-    int m1[m][n];
-    for(int i=0;i<m;i++)
+    cin>>n>>m;
+    int mat[n][m];
+    for(int i=0;i<n;i++)
 	{
-	    for(int j=0;j<n;j++)
+	    for(int j=0;j<m;j++)
 	    {
-	        cin>>m1[i][j];
+	        cin>>mat[i][j];
 	    }
 	}
     cin>>target;
@@ -18,14 +18,14 @@ int main() {
     int r=0,c=m-1;
     while(r<n && c>=0)
     {
-        if(m1[r][c]==target)
+        if(mat[r][c]==target)
          found=true;
-        else if(m1[r][c]>target)
-        c--;
+        else if(mat[r][c]>target)
+           c--;
         else
-        r++;
+           r++;
     }
-    if(found==true)
+    if(found)
     cout<<"Element found";
     else
     cout<<"Element not found";
