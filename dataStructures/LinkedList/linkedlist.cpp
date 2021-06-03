@@ -1,6 +1,5 @@
-#include <iostream>
-using namespace std;
-
+#include<bits/stdc++.h> 
+using namespace std; 
 class node{
     public:
      int data;
@@ -10,41 +9,43 @@ class node{
          next=NULL;
      }
 };
-void insertAtHead(node* &head,int val){
-    node* n= new node(val);
+void insertAthead(node* &head,int val){
+    node* n = new node(val);
+    if(head==NULL){
+        head=n;
+        return;
+    }
     n->next=head;
     head=n;
     
 }
 void insertAtTail(node* &head,int val){
-    node* n= new node(val);
-    if(head=NULL){
-        head=n;
+    node* n=new node(val);
+    if(head==NULL){
+        insertAthead(head,val);
         return;
-        
     }
-     node* temp = head;
-    while(temp->next!=NULL)
-    {
+    node* temp=head;
+    while(temp->next!=NULL){
         temp=temp->next;
     }
     temp->next=n;
 }
-void printLinkedList(node* head)
-{
-  node* temp= head;
-  while(temp!=NULL)
-  {
-      cout<<temp->data<<"->";
-      temp=temp->next;
-  }
+
+void print(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+  cout<<"NULL"<<endl;
 }
-int main() {
-	node* head=NULL;
-	insertAtTail(head,1);
-	insertAtTail(head,2);
-	insertAtTail(head,3);
-	  
-	printLinkedList(head);
-	return 0;
+int main(){
+    node* head=NULL;
+    insertAtTail(head,1);
+    insertAthead(head,2);
+    insertAtTail(head,3);
+    insertAtTail(head,4);
+    insertAtTail(head,5);
+    print(head);
 }
